@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewData["Title"] - Blog</title>
+    <link rel="stylesheet" href="~/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a asp-controller="Snippet" asp-action="Index" >Snippets</a></li>
+                <li><a asp-controller="ComputerLanguage" asp-action="Index">Languages</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+</body>
+</html>

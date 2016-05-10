@@ -1,0 +1,43 @@
+@model IEnumerable<BasicAspApp.Models.ComputerLanguage>
+    
+@{
+    ViewBag.Title = "Computer Languages";
+}
+
+<h2>Snippets</h2>
+
+<p>
+    <a asp-controller="ComputerLanguage" asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Creation Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model){
+            <tr>
+                <td>
+                    <a asp-controller="ComputerLanguage"
+                asp-action="Show" asp-route-id="@item.Id">
+                    @Html.DisplayFor(modelItem => item.Id)
+                    </a>
+                </td>
+                <td>
+                    <a asp-controller="ComputerLanguage"
+                asp-action="Show" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Name)
+                    </a>
+                </td>
+                <td>
+                    <a asp-controller="ComputerLanguage"
+                asp-action="Show" asp-route-id="@item.Id">@item.CreationDate.ToString("MM/dd/yyyy")
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

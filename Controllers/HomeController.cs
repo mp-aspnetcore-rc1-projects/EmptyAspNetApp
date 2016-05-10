@@ -5,22 +5,28 @@ namespace BasicAspApp.Controllers
 {
     public class HomeController : Controller
     {
-        
-		// Index is the default handler
-		public IActionResult Index()
+
+        // Index is the default handler
+        public IActionResult Index()
         {
-           return View();
+            return View();
         }
 
-        public string Welcome(string name,int ID=1)
+        public IActionResult Welcome(string name, int ID = 1)
         {
-            return HtmlEncoder.Default.HtmlEncode(
-                "Hello " + name + ",the ID is " + ID
-            );
+            ViewData["Name"] = name;
+            ViewData["ID"] = ID;
+
+            return View();
         }
         public IActionResult Error()
         {
             return View();
+        }
+
+        public IActionResult StatusCodePage()
+        {
+            return View("~/Views/Shared/StatusCodePage.cshtml");
         }
     }
 }

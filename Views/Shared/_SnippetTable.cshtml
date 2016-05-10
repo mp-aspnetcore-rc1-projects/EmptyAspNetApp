@@ -1,0 +1,22 @@
+@model IEnumerable<BasicAspApp.Models.Snippet>
+@{
+    Layout = null;
+}    
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Language</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model){
+            <tr>
+                <td><a asp-controller="Snippet" asp-action="Show" asp-route-id="@item.Id" >@Html.DisplayFor(modelItem => item.Id)</a></td>
+                <td><a asp-controller="Snippet" asp-action="Show" asp-route-id="@item.Id" >@Html.DisplayFor(modelItem => item.Title)</a></td>
+                <td><a asp-controller="ComputerLanguage" asp-action="Show" asp-route-id="@item.ComputerLanguageId">@item.ComputerLanguage.Name</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,13 @@
+@model IEnumerable<BasicAspApp.Models.Snippet>
+    
+@{
+    ViewBag.Title = "Snippets";
+}
+
+<h2>Snippets</h2>
+
+<p>
+    <a asp-controller="Snippet" asp-action="Create">Create New</a>
+</p>
+
+@Html.Partial("~/Views/Shared/_SnippetTable.cshtml",Model)

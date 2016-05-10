@@ -1,0 +1,7 @@
+@model BasicAspApp.ViewModels.ComputerLanguageShow
+@{
+    ViewBag.Title = Model.ComputerLanguage.Name ;
+}
+<h3>Snippets for @Model.ComputerLanguage.Name</h3>
+
+@Html.Partial("~/Views/Shared/_SnippetTable.cshtml",Model.Snippets)

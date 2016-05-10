@@ -1,0 +1,11 @@
+@model BasicAspApp.Models.Snippet
+
+@{
+    ViewBag.Title = Model.Title  ;
+}
+
+<h3>@Model.Title</h3>
+<div>@Model.ComputerLanguage.Name</div>
+<p>
+    <code><pre>@Model.Content</pre></code>
+</p>
